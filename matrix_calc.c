@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#define maxMatrixDimension 3
+#define maxDimension 3
 
 int main(){
     int matrixDimension;
-    int matrix[maxMatrixDimension][maxMatrixDimension];
+    int matrixA[maxDimension][maxDimension], matrixB[maxDimension][maxDimension];
 
     printf("Unesite dimenziju matrice (1, 2 ili 3): ");
     scanf("%d", &matrixDimension);
@@ -14,17 +14,34 @@ int main(){
         return 0;
     }*/
 
-    printf("Unesite elemente matrice %dx%d:\n", matrixDimension, matrixDimension);
+    printf("Unesite elemente prve matrice %dx%d:\n", matrixDimension, matrixDimension);
     for (int i = 0; i < matrixDimension; i++){
         for (int j = 0; j < matrixDimension; j++){
-            scanf("%d", &matrix[i][j]);
+            //printf("Element [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matrixA[i][j]);
         }
     }
 
-    printf("Zadana matrica:\n");
+    printf("Zadana prva matrica:\n");
     for(int i = 0; i < matrixDimension; i++){
         for(int j = 0; j < matrixDimension; j++){
-            printf("%d ", matrix[i][j]);
+            printf("%d ", matrixA[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("Unesite elemente druge matrice %dx%d:\n", matrixDimension, matrixDimension);
+    for (int i = 0; i < matrixDimension; i++){
+        for (int j = 0; j < matrixDimension; j++){
+            //printf("Element [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matrixB[i][j]);
+        }
+    }
+
+    printf("Zadana druga matrica:\n");
+    for(int i = 0; i < matrixDimension; i++){
+        for(int j = 0; j < matrixDimension; j++){
+            printf("%d ", matrixB[i][j]);
         }
         printf("\n");
     }
