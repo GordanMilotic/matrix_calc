@@ -2,6 +2,36 @@
 
 #define maxDimension 3 //maksimalna dimnezija matrice cemo ben povecat
 
+void unosMatrice(int matrix[maxDimension][maxDimension], int matrixDimension, char ime){
+    printf("Unesite elemente matrice %c (%dx%d):\n", ime, matrixDimension, matrixDimension);
+    for(int i = 0; i < matrixDimension; i++){
+        for(int j = 0; j < matrixDimension; j++){
+            printf("%c[%d][%d], ime");
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+void ispisMatrice(int matrix[maxDimension][maxDimension], int matrixDimension){
+    //printf("Zadana matrica %c:\n", ime);
+    for(int i = 0; i < matrixDimension; i++){
+        for(int j = 0; j < matrixDimension; j++){
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void zbrojiMatrice(int matrixA[maxDimension][maxDimension], int matrixB[maxDimension][maxDimension], int matrixC[maxDimension][maxDimension], int matrixDimension){
+    for(int i = 0; i < matrixDimension; i++){
+        for(int j = 0; j < matrixDimension; j++){
+            matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
+        }
+    }
+}
+
+//ne pokreci dok ne finis funckije zasebne
+
 int main(){
     int matrixDimension;
     int matrixA[maxDimension][maxDimension], matrixB[maxDimension][maxDimension], sum[maxDimension][maxDimension], diff[maxDimension][maxDimension];
@@ -44,6 +74,15 @@ int main(){
             printf("%d ", matrixB[i][j]);
         }
         printf("\n");
+    }
+
+    int odabirOperacije = -1;
+    printf("Operacije: \n 1.Zbrajanje \n 2.Oduzimanje");
+    int flag = 1;
+
+    while(flag){
+        printf("\nOdaberite operaciju: ");
+        scanf("%d", &odabirOperacije);
     }
 
     for(int i = 0; i < matrixDimension; i++){
